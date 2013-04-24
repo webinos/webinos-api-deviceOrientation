@@ -1,4 +1,4 @@
-{ "name": "deviceorientation"
+{ "name": "webinos-api-devicerOrientation"
 , "publishConfig": { "tag": "alpha" }
 , "description": "deviceorientation API"
 , "keywords": ["webinos", "deviceorientation" , "API"]
