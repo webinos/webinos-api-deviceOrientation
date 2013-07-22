@@ -1,0 +1,5 @@
+{
+  "android": {
+    "DeviceorientationImpl": "org.webinos.android.impl.DeviceorientationImpl"
+  }
+}
