@@ -1,14 +1,18 @@
 (function() {
 
 WebinosDeviceOrientation = function (obj) {
-	this.base = WebinosService;
-	this.base(obj);
+	WebinosService.call(this, obj);
 };
+
+	// Inherit all functions from WebinosService
+	WebinosDeviceOrientation.prototype = Object.create(WebinosService.prototype);	
+	// The following allows the 'instanceof' to work properly
+	WebinosDeviceOrientation.prototype.constructor = WebinosDeviceOrientation;
+	// Register to the service discovery
+	_webinos.registerServiceConstructor("http://webinos.org/api/deviceorientation", WebinosDeviceOrientation);
 
 var _referenceMappingDo = new Array();
 var _eventIdsDo = new Array('deviceorientation', 'compassneedscalibration', 'devicemotion');
-
-WebinosDeviceOrientation.prototype = new WebinosService;
 
 WebinosDeviceOrientation.prototype.bindService = function (bindCB, serviceId) {
 	// actually there should be an auth check here or whatever, but we just always bind
